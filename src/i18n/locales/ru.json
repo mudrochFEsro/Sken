@@ -1,0 +1,71 @@
+{
+  "app_name": "Sken",
+  "dashboard": {
+    "title": "Сканы",
+    "monthly_total": "Расходы за месяц",
+    "empty_title": "Сканов пока нет",
+    "empty_subtitle": "Нажмите + чтобы отсканировать первый чек",
+    "search_placeholder": "Поиск сканов..."
+  },
+  "scan": {
+    "title": "Сканировать",
+    "permission_title": "Доступ к камере",
+    "permission_message": "Sken нужен доступ к камере для сканирования чеков.",
+    "permission_denied": "Доступ к камере запрещён. Включите в Настройках.",
+    "open_settings": "Открыть настройки",
+    "grant_access": "Разрешить доступ",
+    "analyzing": "Анализ чека...",
+    "capture": "Снять"
+  },
+  "editor": {
+    "title": "Детали",
+    "merchant": "Продавец",
+    "merchant_placeholder": "Название магазина",
+    "amount": "Сумма",
+    "amount_placeholder": "0,00",
+    "currency": "Валюта",
+    "date": "Дата",
+    "category": "Категория",
+    "notes": "Заметки",
+    "notes_placeholder": "Дополнительные заметки...",
+    "save": "Сохранить",
+    "discard": "Отменить",
+    "discard_confirm": "Отменить этот скан?",
+    "review_suggested": "Рекомендуется проверить",
+    "raw_text": "Исходный текст OCR",
+    "manual_entry": "Ручной ввод"
+  },
+  "categories": {
+    "food": "Еда",
+    "travel": "Путешествия",
+    "office": "Офис",
+    "transport": "Транспорт",
+    "entertainment": "Развлечения",
+    "health": "Здоровье",
+    "utilities": "Коммунальные",
+    "other": "Прочее"
+  },
+  "settings": {
+    "title": "Настройки",
+    "language": "Язык",
+    "theme": "Оформление",
+    "theme_light": "Светлая",
+    "theme_dark": "Тёмная",
+    "version": "Версия"
+  },
+  "export": {
+    "title": "Экспорт",
+    "description": "Экспортировать все сканы в CSV",
+    "share": "Поделиться CSV",
+    "no_data": "Нет сканов для экспорта",
+    "success": "CSV успешно экспортирован"
+  },
+  "common": {
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "delete": "Удалить",
+    "delete_confirm": "Удалить этот скан?",
+    "yes": "Да",
+    "no": "Нет"
+  }
+}

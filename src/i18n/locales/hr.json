@@ -1,0 +1,71 @@
+{
+  "app_name": "Sken",
+  "dashboard": {
+    "title": "Skenovi",
+    "monthly_total": "Mjesečna potrošnja",
+    "empty_title": "Nema skenova",
+    "empty_subtitle": "Dodirnite + za skeniranje prvog računa",
+    "search_placeholder": "Pretraži skenove..."
+  },
+  "scan": {
+    "title": "Skeniraj",
+    "permission_title": "Pristup kameri",
+    "permission_message": "Sken treba pristup kameri za skeniranje računa.",
+    "permission_denied": "Pristup kameri odbijen. Omogućite ga u Postavkama.",
+    "open_settings": "Otvori postavke",
+    "grant_access": "Dopusti pristup",
+    "analyzing": "Analiziram račun...",
+    "capture": "Snimi"
+  },
+  "editor": {
+    "title": "Detalji",
+    "merchant": "Trgovac",
+    "merchant_placeholder": "Naziv trgovine",
+    "amount": "Iznos",
+    "amount_placeholder": "0,00",
+    "currency": "Valuta",
+    "date": "Datum",
+    "category": "Kategorija",
+    "notes": "Bilješke",
+    "notes_placeholder": "Neobavezne bilješke...",
+    "save": "Spremi",
+    "discard": "Odbaci",
+    "discard_confirm": "Odbaciti ovaj sken?",
+    "review_suggested": "Preporučena provjera",
+    "raw_text": "Izvorni OCR tekst",
+    "manual_entry": "Ručni unos"
+  },
+  "categories": {
+    "food": "Hrana",
+    "travel": "Putovanje",
+    "office": "Ured",
+    "transport": "Prijevoz",
+    "entertainment": "Zabava",
+    "health": "Zdravlje",
+    "utilities": "Režije",
+    "other": "Ostalo"
+  },
+  "settings": {
+    "title": "Postavke",
+    "language": "Jezik",
+    "theme": "Izgled",
+    "theme_light": "Svijetli",
+    "theme_dark": "Tamni",
+    "version": "Verzija"
+  },
+  "export": {
+    "title": "Izvoz",
+    "description": "Izvezi sve skenove kao CSV",
+    "share": "Dijeli CSV",
+    "no_data": "Nema skenova za izvoz",
+    "success": "CSV uspješno izvezen"
+  },
+  "common": {
+    "cancel": "Odustani",
+    "confirm": "Potvrdi",
+    "delete": "Obriši",
+    "delete_confirm": "Obrisati ovaj sken?",
+    "yes": "Da",
+    "no": "Ne"
+  }
+}

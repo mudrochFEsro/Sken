@@ -1,0 +1,71 @@
+{
+  "app_name": "Sken",
+  "dashboard": {
+    "title": "Skeny",
+    "monthly_total": "Mesačné výdavky",
+    "empty_title": "Zatiaľ žiadne skeny",
+    "empty_subtitle": "Klepnite na + pre naskenovanie prvého účtu",
+    "search_placeholder": "Hľadať skeny..."
+  },
+  "scan": {
+    "title": "Skenovať",
+    "permission_title": "Prístup ku kamere",
+    "permission_message": "Sken potrebuje prístup ku kamere na skenovanie účtov.",
+    "permission_denied": "Prístup ku kamere bol zamietnutý. Povoľte ho v Nastaveniach.",
+    "open_settings": "Otvoriť nastavenia",
+    "grant_access": "Povoliť prístup",
+    "analyzing": "Analyzujem účet...",
+    "capture": "Odfotiť"
+  },
+  "editor": {
+    "title": "Detaily",
+    "merchant": "Obchodník",
+    "merchant_placeholder": "Názov obchodu",
+    "amount": "Suma",
+    "amount_placeholder": "0,00",
+    "currency": "Mena",
+    "date": "Dátum",
+    "category": "Kategória",
+    "notes": "Poznámky",
+    "notes_placeholder": "Voliteľné poznámky...",
+    "save": "Uložiť",
+    "discard": "Zahodiť",
+    "discard_confirm": "Zahodiť tento sken?",
+    "review_suggested": "Odporúčame skontrolovať",
+    "raw_text": "Surový OCR text",
+    "manual_entry": "Ručné zadanie"
+  },
+  "categories": {
+    "food": "Jedlo",
+    "travel": "Cestovanie",
+    "office": "Kancelária",
+    "transport": "Doprava",
+    "entertainment": "Zábava",
+    "health": "Zdravie",
+    "utilities": "Služby",
+    "other": "Ostatné"
+  },
+  "settings": {
+    "title": "Nastavenia",
+    "language": "Jazyk",
+    "theme": "Vzhľad",
+    "theme_light": "Svetlý",
+    "theme_dark": "Tmavý",
+    "version": "Verzia"
+  },
+  "export": {
+    "title": "Export",
+    "description": "Exportovať všetky skeny ako CSV",
+    "share": "Zdieľať CSV",
+    "no_data": "Žiadne skeny na export",
+    "success": "CSV úspešne exportované"
+  },
+  "common": {
+    "cancel": "Zrušiť",
+    "confirm": "Potvrdiť",
+    "delete": "Vymazať",
+    "delete_confirm": "Vymazať tento sken?",
+    "yes": "Áno",
+    "no": "Nie"
+  }
+}

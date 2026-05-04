@@ -1,0 +1,71 @@
+{
+  "app_name": "Sken",
+  "dashboard": {
+    "title": "Skeny",
+    "monthly_total": "Měsíční útraty",
+    "empty_title": "Zatím žádné skeny",
+    "empty_subtitle": "Klepněte na + pro naskenování prvního účtu",
+    "search_placeholder": "Hledat skeny..."
+  },
+  "scan": {
+    "title": "Skenovat",
+    "permission_title": "Přístup ke kameře",
+    "permission_message": "Sken potřebuje přístup ke kameře pro skenování účtenek.",
+    "permission_denied": "Přístup ke kameře byl zamítnut. Povolte ho v Nastavení.",
+    "open_settings": "Otevřít nastavení",
+    "grant_access": "Povolit přístup",
+    "analyzing": "Analyzuji účtenku...",
+    "capture": "Vyfotit"
+  },
+  "editor": {
+    "title": "Detaily",
+    "merchant": "Obchodník",
+    "merchant_placeholder": "Název obchodu",
+    "amount": "Částka",
+    "amount_placeholder": "0,00",
+    "currency": "Měna",
+    "date": "Datum",
+    "category": "Kategorie",
+    "notes": "Poznámky",
+    "notes_placeholder": "Volitelné poznámky...",
+    "save": "Uložit",
+    "discard": "Zahodit",
+    "discard_confirm": "Zahodit tento sken?",
+    "review_suggested": "Doporučujeme zkontrolovat",
+    "raw_text": "Surový OCR text",
+    "manual_entry": "Ruční zadání"
+  },
+  "categories": {
+    "food": "Jídlo",
+    "travel": "Cestování",
+    "office": "Kancelář",
+    "transport": "Doprava",
+    "entertainment": "Zábava",
+    "health": "Zdraví",
+    "utilities": "Služby",
+    "other": "Ostatní"
+  },
+  "settings": {
+    "title": "Nastavení",
+    "language": "Jazyk",
+    "theme": "Vzhled",
+    "theme_light": "Světlý",
+    "theme_dark": "Tmavý",
+    "version": "Verze"
+  },
+  "export": {
+    "title": "Export",
+    "description": "Exportovat všechny skeny jako CSV",
+    "share": "Sdílet CSV",
+    "no_data": "Žádné skeny k exportu",
+    "success": "CSV úspěšně exportováno"
+  },
+  "common": {
+    "cancel": "Zrušit",
+    "confirm": "Potvrdit",
+    "delete": "Smazat",
+    "delete_confirm": "Smazat tento sken?",
+    "yes": "Ano",
+    "no": "Ne"
+  }
+}

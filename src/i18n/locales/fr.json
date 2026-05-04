@@ -1,0 +1,71 @@
+{
+  "app_name": "Sken",
+  "dashboard": {
+    "title": "Scans",
+    "monthly_total": "Dépenses mensuelles",
+    "empty_title": "Aucun scan",
+    "empty_subtitle": "Appuyez sur + pour scanner votre premier reçu",
+    "search_placeholder": "Rechercher des scans..."
+  },
+  "scan": {
+    "title": "Scanner",
+    "permission_title": "Accès à la caméra",
+    "permission_message": "Sken a besoin de la caméra pour scanner les reçus.",
+    "permission_denied": "Accès à la caméra refusé. Activez-le dans les Réglages.",
+    "open_settings": "Ouvrir les réglages",
+    "grant_access": "Autoriser l'accès",
+    "analyzing": "Analyse du reçu...",
+    "capture": "Capturer"
+  },
+  "editor": {
+    "title": "Détails",
+    "merchant": "Commerçant",
+    "merchant_placeholder": "Nom du magasin",
+    "amount": "Montant",
+    "amount_placeholder": "0,00",
+    "currency": "Devise",
+    "date": "Date",
+    "category": "Catégorie",
+    "notes": "Notes",
+    "notes_placeholder": "Notes optionnelles...",
+    "save": "Enregistrer",
+    "discard": "Supprimer",
+    "discard_confirm": "Supprimer ce scan ?",
+    "review_suggested": "Vérification recommandée",
+    "raw_text": "Texte OCR brut",
+    "manual_entry": "Saisie manuelle"
+  },
+  "categories": {
+    "food": "Alimentation",
+    "travel": "Voyage",
+    "office": "Bureau",
+    "transport": "Transport",
+    "entertainment": "Divertissement",
+    "health": "Santé",
+    "utilities": "Services",
+    "other": "Autre"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "language": "Langue",
+    "theme": "Apparence",
+    "theme_light": "Clair",
+    "theme_dark": "Sombre",
+    "version": "Version"
+  },
+  "export": {
+    "title": "Export",
+    "description": "Exporter tous les scans en CSV",
+    "share": "Partager le CSV",
+    "no_data": "Aucun scan à exporter",
+    "success": "CSV exporté avec succès"
+  },
+  "common": {
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "delete": "Supprimer",
+    "delete_confirm": "Supprimer ce scan ?",
+    "yes": "Oui",
+    "no": "Non"
+  }
+}

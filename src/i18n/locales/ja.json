@@ -1,0 +1,71 @@
+{
+  "app_name": "Sken",
+  "dashboard": {
+    "title": "スキャン",
+    "monthly_total": "月間支出",
+    "empty_title": "スキャンなし",
+    "empty_subtitle": "+ をタップして最初のレシートをスキャン",
+    "search_placeholder": "スキャンを検索..."
+  },
+  "scan": {
+    "title": "スキャン",
+    "permission_title": "カメラへのアクセス",
+    "permission_message": "Skenはレシートのスキャンにカメラが必要です。",
+    "permission_denied": "カメラへのアクセスが拒否されました。設定で有効にしてください。",
+    "open_settings": "設定を開く",
+    "grant_access": "アクセスを許可",
+    "analyzing": "レシートを分析中...",
+    "capture": "撮影"
+  },
+  "editor": {
+    "title": "詳細",
+    "merchant": "店舗",
+    "merchant_placeholder": "店舗名",
+    "amount": "金額",
+    "amount_placeholder": "0",
+    "currency": "通貨",
+    "date": "日付",
+    "category": "カテゴリー",
+    "notes": "メモ",
+    "notes_placeholder": "メモ（任意）...",
+    "save": "保存",
+    "discard": "破棄",
+    "discard_confirm": "このスキャンを破棄しますか？",
+    "review_suggested": "確認を推奨",
+    "raw_text": "OCR生テキスト",
+    "manual_entry": "手動入力"
+  },
+  "categories": {
+    "food": "食費",
+    "travel": "旅行",
+    "office": "事務用品",
+    "transport": "交通費",
+    "entertainment": "娯楽",
+    "health": "健康",
+    "utilities": "光熱費",
+    "other": "その他"
+  },
+  "settings": {
+    "title": "設定",
+    "language": "言語",
+    "theme": "外観",
+    "theme_light": "ライト",
+    "theme_dark": "ダーク",
+    "version": "バージョン"
+  },
+  "export": {
+    "title": "エクスポート",
+    "description": "全スキャンをCSVでエクスポート",
+    "share": "CSVを共有",
+    "no_data": "エクスポートするスキャンがありません",
+    "success": "CSVのエクスポートに成功"
+  },
+  "common": {
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "delete": "削除",
+    "delete_confirm": "このスキャンを削除しますか？",
+    "yes": "はい",
+    "no": "いいえ"
+  }
+}

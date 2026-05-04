@@ -1,0 +1,71 @@
+{
+  "app_name": "Sken",
+  "dashboard": {
+    "title": "Scans",
+    "monthly_total": "Monatsausgaben",
+    "empty_title": "Noch keine Scans",
+    "empty_subtitle": "Tippen Sie auf + um den ersten Beleg zu scannen",
+    "search_placeholder": "Scans suchen..."
+  },
+  "scan": {
+    "title": "Scannen",
+    "permission_title": "Kamerazugriff",
+    "permission_message": "Sken benötigt Kamerazugriff zum Scannen von Belegen.",
+    "permission_denied": "Kamerazugriff verweigert. Aktivieren Sie ihn in den Einstellungen.",
+    "open_settings": "Einstellungen öffnen",
+    "grant_access": "Zugriff gewähren",
+    "analyzing": "Beleg wird analysiert...",
+    "capture": "Aufnehmen"
+  },
+  "editor": {
+    "title": "Details",
+    "merchant": "Händler",
+    "merchant_placeholder": "Geschäftsname",
+    "amount": "Betrag",
+    "amount_placeholder": "0,00",
+    "currency": "Währung",
+    "date": "Datum",
+    "category": "Kategorie",
+    "notes": "Notizen",
+    "notes_placeholder": "Optionale Notizen...",
+    "save": "Speichern",
+    "discard": "Verwerfen",
+    "discard_confirm": "Diesen Scan verwerfen?",
+    "review_suggested": "Überprüfung empfohlen",
+    "raw_text": "OCR-Rohtext",
+    "manual_entry": "Manuelle Eingabe"
+  },
+  "categories": {
+    "food": "Essen",
+    "travel": "Reise",
+    "office": "Büro",
+    "transport": "Transport",
+    "entertainment": "Unterhaltung",
+    "health": "Gesundheit",
+    "utilities": "Versorgung",
+    "other": "Sonstiges"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "theme": "Erscheinungsbild",
+    "theme_light": "Hell",
+    "theme_dark": "Dunkel",
+    "version": "Version"
+  },
+  "export": {
+    "title": "Export",
+    "description": "Alle Scans als CSV exportieren",
+    "share": "CSV teilen",
+    "no_data": "Keine Scans zum Exportieren",
+    "success": "CSV erfolgreich exportiert"
+  },
+  "common": {
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "delete": "Löschen",
+    "delete_confirm": "Diesen Scan löschen?",
+    "yes": "Ja",
+    "no": "Nein"
+  }
+}

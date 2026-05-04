@@ -1,21 +1,17 @@
 import { Platform } from 'react-native';
 
-let AsyncStorageModule: any = null;
-
-async function getAsyncStorage() {
-  if (Platform.OS === 'web') return null;
-  if (!AsyncStorageModule) {
-    AsyncStorageModule = (await import('@react-native-async-storage/async-storage')).default;
-  }
-  return AsyncStorageModule;
-}
+const memoryStore: Record<string, string> = {};
 
 export async function getItem(key: string): Promise<string | null> {
   if (Platform.OS === 'web') {
     return localStorage.getItem(key);
   }
-  const storage = await getAsyncStorage();
-  return storage?.getItem(key) ?? null;
+  try {
+    const AsyncStorage = (await import('@react-native-async-storage/async-storage')).default;
+    return await AsyncStorage.getItem(key);
+  } catch {
+    return memoryStore[key] ?? null;
+  }
 }
 
 export async function setItem(key: string, value: string): Promise<void> {
@@ -23,6 +19,10 @@ export async function setItem(key: string, value: string): Promise<void> {
     localStorage.setItem(key, value);
     return;
   }
-  const storage = await getAsyncStorage();
-  await storage?.setItem(key, value);
+  try {
+    const AsyncStorage = (await import('@react-native-async-storage/async-storage')).default;
+    await AsyncStorage.setItem(key, value);
+  } catch {
+    memoryStore[key] = value;
+  }
 }

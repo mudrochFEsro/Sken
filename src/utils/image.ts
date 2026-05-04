@@ -1,34 +1,37 @@
-import { Paths, File, Directory } from 'expo-file-system';
+import {
+  documentDirectory,
+  makeDirectoryAsync,
+  moveAsync,
+  getInfoAsync,
+  deleteAsync,
+} from 'expo-file-system/legacy';
 
-const IMAGES_DIR_NAME = 'scans';
+const IMAGES_DIR = `${documentDirectory}scans/`;
 
-function getImagesDir(): Directory {
-  return new Directory(Paths.document, IMAGES_DIR_NAME);
-}
-
-function ensureDir(): void {
-  const dir = getImagesDir();
-  if (!dir.exists) {
-    dir.create();
+async function ensureDir() {
+  const info = await getInfoAsync(IMAGES_DIR);
+  if (!info.exists) {
+    await makeDirectoryAsync(IMAGES_DIR, { intermediates: true });
   }
 }
 
 export async function saveImage(scanId: string, tempUri: string): Promise<string> {
-  ensureDir();
-  const source = new File(tempUri);
-  const dest = new File(getImagesDir(), `${scanId}.jpg`);
-  source.move(dest);
-  return dest.uri;
+  await ensureDir();
+  const dest = `${IMAGES_DIR}${scanId}.jpg`;
+  await moveAsync({ from: tempUri, to: dest });
+  return dest;
 }
 
-export function getImageUri(scanId: string): string | null {
-  const file = new File(getImagesDir(), `${scanId}.jpg`);
-  return file.exists ? file.uri : null;
+export async function getImageUri(scanId: string): Promise<string | null> {
+  const path = `${IMAGES_DIR}${scanId}.jpg`;
+  const info = await getInfoAsync(path);
+  return info.exists ? path : null;
 }
 
-export function deleteImage(scanId: string): void {
-  const file = new File(getImagesDir(), `${scanId}.jpg`);
-  if (file.exists) {
-    file.delete();
+export async function deleteImage(scanId: string): Promise<void> {
+  const path = `${IMAGES_DIR}${scanId}.jpg`;
+  const info = await getInfoAsync(path);
+  if (info.exists) {
+    await deleteAsync(path);
   }
 }

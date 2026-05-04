@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { View, ScrollView, Image, Alert, StyleSheet, Pressable } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +8,7 @@ import { Card } from '@/components/ui/Card';
 import { Label, Caption, Body } from '@/components/ui/Typography';
 import { CategoryPicker } from '@/components/CategoryPicker';
 import { CurrencyPicker } from '@/components/CurrencyPicker';
-import { useSaveScan } from '@/db/hooks';
+import { useSaveScan, useScan, useDeleteScan } from '@/db/hooks';
 import { useTheme } from '@/hooks/useColorScheme';
 import { colors } from '@/theme/colors';
 import { spacing } from '@/theme/tokens';
@@ -23,6 +23,7 @@ export default function EditorScreen() {
   const { colorScheme } = useTheme();
   const palette = colors[colorScheme];
   const saveScan = useSaveScan();
+  const deleteScan = useDeleteScan();
   const params = useLocalSearchParams<{
     scanId: string;
     imageUri?: string;
@@ -35,6 +36,9 @@ export default function EditorScreen() {
     rawText?: string;
   }>();
 
+  const existingScan = useScan(params.scanId ?? null);
+  const isEditing = !!existingScan;
+
   const [merchant, setMerchant] = useState(params.merchant ?? '');
   const [amount, setAmount] = useState(params.amount ?? '0');
   const [currency, setCurrency] = useState(params.currency ?? getDefaultCurrency());
@@ -43,6 +47,19 @@ export default function EditorScreen() {
   const [notes, setNotes] = useState('');
   const [showRawText, setShowRawText] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [imageUri, setImageUri] = useState(params.imageUri ?? '');
+
+  useEffect(() => {
+    if (existingScan) {
+      setMerchant(existingScan.merchant);
+      setAmount(existingScan.amount.toString());
+      setCurrency(existingScan.currency);
+      setDate(existingScan.date);
+      setCategory(existingScan.category);
+      setNotes(existingScan.notes ?? '');
+      if (existingScan.image_uri) setImageUri(existingScan.image_uri);
+    }
+  }, [existingScan]);
 
   const confidence = parseFloat(params.confidence ?? '0');
 
@@ -56,10 +73,27 @@ export default function EditorScreen() {
       date,
       category,
       notes,
-      image_uri: params.imageUri ?? null,
+      image_uri: imageUri || null,
     });
-    router.dismissAll();
-  }, [saveScan, params.scanId, params.imageUri, merchant, amount, currency, date, category, notes, router]);
+    router.back();
+  }, [saveScan, params.scanId, imageUri, merchant, amount, currency, date, category, notes, router]);
+
+  const handleDelete = useCallback(() => {
+    Alert.alert(t('common.delete_confirm'), '', [
+      { text: t('common.cancel'), style: 'cancel' },
+      {
+        text: t('common.delete'),
+        style: 'destructive',
+        onPress: async () => {
+          if (params.scanId) {
+            await deleteScan(params.scanId);
+            await deleteImage(params.scanId);
+          }
+          router.back();
+        },
+      },
+    ]);
+  }, [t, params.scanId, deleteScan, router]);
 
   const handleDiscard = useCallback(() => {
     Alert.alert(t('editor.discard_confirm'), '', [
@@ -67,13 +101,13 @@ export default function EditorScreen() {
       {
         text: t('editor.discard'),
         style: 'destructive',
-        onPress: () => {
-          if (params.scanId) deleteImage(params.scanId);
+        onPress: async () => {
+          if (params.scanId && !isEditing) await deleteImage(params.scanId);
           router.back();
         },
       },
     ]);
-  }, [t, params.scanId, router]);
+  }, [t, params.scanId, isEditing, router]);
 
   return (
     <ScrollView
@@ -81,9 +115,9 @@ export default function EditorScreen() {
       contentContainerStyle={styles.content}
       keyboardShouldPersistTaps="handled"
     >
-      {params.imageUri && (
-        <Image source={{ uri: params.imageUri }} style={styles.preview} resizeMode="cover" />
-      )}
+      {imageUri ? (
+        <Image source={{ uri: imageUri }} style={styles.preview} resizeMode="cover" />
+      ) : null}
 
       {confidence > 0 && confidence < 0.5 && (
         <Card style={[styles.badge, { borderColor: palette.muted }]}>
@@ -152,7 +186,11 @@ export default function EditorScreen() {
 
         <View style={styles.actions}>
           <Button title={t('editor.save')} onPress={handleSave} disabled={saving} />
-          <Button title={t('editor.discard')} variant="ghost" onPress={handleDiscard} />
+          {isEditing ? (
+            <Button title={t('common.delete')} variant="destructive" onPress={handleDelete} />
+          ) : (
+            <Button title={t('editor.discard')} variant="ghost" onPress={handleDiscard} />
+          )}
         </View>
       </View>
     </ScrollView>

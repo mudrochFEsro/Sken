@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView, StyleSheet, Alert } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { Paths, File } from 'expo-file-system';
+import { cacheDirectory, writeAsStringAsync } from 'expo-file-system/legacy';
 import * as Sharing from 'expo-sharing';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -29,9 +29,8 @@ export default function ExportScreen() {
 
   const handleExport = async () => {
     const csv = exportToCSV(scans);
-    const csvFile = new File(Paths.cache, 'sken_export.csv');
-    csvFile.write(csv);
-    const fileUri = csvFile.uri;
+    const fileUri = `${cacheDirectory}sken_export.csv`;
+    await writeAsStringAsync(fileUri, csv);
 
     if (await Sharing.isAvailableAsync()) {
       await Sharing.shareAsync(fileUri, {

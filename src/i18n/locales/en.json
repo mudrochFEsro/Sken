@@ -51,6 +51,17 @@
     "theme": "Appearance",
     "theme_light": "Light",
     "theme_dark": "Dark",
+    "home_currency": "Home Currency",
+    "backup": "Backup & Restore",
+    "backup_export": "Export Backup",
+    "backup_export_desc": "Save database to Files",
+    "backup_done": "Backup shared",
+    "backup_empty": "No data to backup",
+    "rates": "Exchange Rates",
+    "rates_update": "Update Rates",
+    "rates_updated": "Rates updated",
+    "rates_offline": "Offline — using cached rates",
+    "rates_date": "Last updated",
     "version": "Version"
   },
   "export": {
@@ -59,6 +70,22 @@
     "share": "Share CSV",
     "no_data": "No scans to export",
     "success": "CSV exported successfully"
+  },
+  "tax_report": {
+    "title": "Tax Report",
+    "generate": "Generate PDF",
+    "period": "Period",
+    "from": "From",
+    "to": "To",
+    "generated": "Generated",
+    "total": "Total",
+    "date": "Date",
+    "merchant": "Merchant",
+    "amount": "Amount",
+    "category": "Category",
+    "converted": "Converted",
+    "no_data": "No scans in this period",
+    "share": "Share PDF"
   },
   "common": {
     "cancel": "Cancel",

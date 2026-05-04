@@ -6,6 +6,7 @@ import { useThemeProvider, ThemeContext } from '@/hooks/useColorScheme';
 import { DatabaseProvider } from '@/db/provider';
 import { initI18n } from '@/i18n';
 import { colors } from '@/theme/colors';
+import { loadRates } from '@/utils/exchange-rates';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -16,7 +17,7 @@ export default function RootLayout() {
   const [i18nReady, setI18nReady] = useState(false);
 
   useEffect(() => {
-    initI18n().then(() => setI18nReady(true));
+    Promise.all([initI18n(), loadRates()]).then(() => setI18nReady(true));
   }, []);
 
   useEffect(() => {
@@ -47,6 +48,7 @@ export default function RootLayout() {
           <Stack.Screen name="editor" options={{ title: '' }} />
           <Stack.Screen name="settings" />
           <Stack.Screen name="export" />
+          <Stack.Screen name="tax-report" />
         </Stack>
       </DatabaseProvider>
     </ThemeContext.Provider>

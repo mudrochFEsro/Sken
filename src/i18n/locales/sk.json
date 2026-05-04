@@ -51,6 +51,17 @@
     "theme": "Vzhľad",
     "theme_light": "Svetlý",
     "theme_dark": "Tmavý",
+    "home_currency": "Domáca mena",
+    "backup": "Záloha",
+    "backup_export": "Exportovať zálohu",
+    "backup_export_desc": "Uložiť databázu do Súborov",
+    "backup_done": "Záloha zdieľaná",
+    "backup_empty": "Žiadne dáta na zálohu",
+    "rates": "Výmenné kurzy",
+    "rates_update": "Aktualizovať kurzy",
+    "rates_updated": "Kurzy aktualizované",
+    "rates_offline": "Offline — používam uložené kurzy",
+    "rates_date": "Posledná aktualizácia",
     "version": "Verzia"
   },
   "export": {
@@ -59,6 +70,22 @@
     "share": "Zdieľať CSV",
     "no_data": "Žiadne skeny na export",
     "success": "CSV úspešne exportované"
+  },
+  "tax_report": {
+    "title": "Daňový výkaz",
+    "generate": "Generovať PDF",
+    "period": "Obdobie",
+    "from": "Od",
+    "to": "Do",
+    "generated": "Vygenerované",
+    "total": "Celkom",
+    "date": "Dátum",
+    "merchant": "Obchodník",
+    "amount": "Suma",
+    "category": "Kategória",
+    "converted": "Prepočítané",
+    "no_data": "Žiadne skeny v tomto období",
+    "share": "Zdieľať PDF"
   },
   "common": {
     "cancel": "Zrušiť",

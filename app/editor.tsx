@@ -15,6 +15,7 @@ import { spacing } from '@/theme/tokens';
 import { deleteImage } from '@/utils/image';
 import { getToday } from '@/utils/date';
 import { getDefaultCurrency } from '@/utils/currency';
+import { smartCategorize } from '@/utils/categorizer';
 import type { Category } from '@/utils/categories';
 
 export default function EditorScreen() {
@@ -62,6 +63,14 @@ export default function EditorScreen() {
   }, [existingScan]);
 
   const confidence = parseFloat(params.confidence ?? '0');
+
+  const handleMerchantChange = useCallback((text: string) => {
+    setMerchant(text);
+    if (!isEditing && text.length > 2 && category === 'other') {
+      const result = smartCategorize(text);
+      if (result.confidence > 0) setCategory(result.category);
+    }
+  }, [isEditing, category]);
 
   const handleSave = useCallback(async () => {
     setSaving(true);
@@ -129,7 +138,7 @@ export default function EditorScreen() {
         <Input
           label={t('editor.merchant')}
           value={merchant}
-          onChangeText={setMerchant}
+          onChangeText={handleMerchantChange}
           placeholder={t('editor.merchant_placeholder')}
         />
 

@@ -1,21 +1,16 @@
-import { Platform } from 'react-native';
-
 export type OcrResult = {
   text: string;
   blocks: any[];
 };
 
-export async function recognizeText(imageUri: string): Promise<OcrResult> {
-  if (Platform.OS === 'web') {
-    return { text: '', blocks: [] };
-  }
+const EMPTY: OcrResult = { text: '', blocks: [] };
 
-  const { recognizeText: mlkitRecognize } = await import(
-    '@infinitered/react-native-mlkit-text-recognition'
-  );
-  const result = await mlkitRecognize(imageUri);
-  return {
-    text: result.text,
-    blocks: result.blocks,
-  };
+export async function recognizeText(imageUri: string): Promise<OcrResult> {
+  try {
+    const module = require('@infinitered/react-native-mlkit-text-recognition');
+    const result = await module.recognizeText(imageUri);
+    return { text: result.text, blocks: result.blocks };
+  } catch {
+    return EMPTY;
+  }
 }
